@@ -1,0 +1,148 @@
+html {
+  box-sizing: border-box;
+  font-family: "Kanit", sans-serif;
+}
+
+:root {
+  --color-primary-dark: #222831;
+  --color-primari-light: #393e46;
+  --color-secondary: #00adb5;
+  --color-white: #eeeeee;
+  --color-greyed: #888888;
+}
+
+*,
+*::before,
+*::after {
+  margin: 0;
+  box-sizing: inherit;
+}
+
+body {
+  background-color: var(--color-primary-dark);
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.cal-container {
+  padding: 2em;
+  background-color: var(--color-primari-light);
+  display: flex;
+  flex-direction: column;
+  gap: 2em;
+  border: 2px solid var(--color-secondary);
+  box-shadow: 7px 20px 20px 5px #02020324;
+}
+
+.cal-prev,
+.cal-next {
+  background-color: var(--color-primary-dark);
+  padding: 0.5em 2em;
+}
+
+.cal-prev:hover,
+.cal-next:hover {
+  background-color: var(--color-secondary);
+}
+
+.cal-month {
+  font-size: 1.2rem;
+  display: flex;
+  justify-content: space-around;
+  color: var(--color-white);
+  align-items: center;
+}
+
+.cal-head {
+  display: flex;
+}
+
+.cal-current {
+  font-weight: bold;
+  letter-spacing: 1.2px;
+}
+
+.cal-day-name {
+  width: 4em;
+  padding: 1em;
+  text-align: center;
+  background-color: var(--color-primary-dark);
+  color: var(--color-secondary);
+}
+
+.cal-body {
+  display: flex;
+  flex-direction: column;
+}
+
+.cal-week {
+  display: flex;
+  flex-direction: row;
+}
+
+.cal-day-number {
+  width: 4em;
+  padding: 1em;
+  text-align: center;
+  color: var(--color-white);
+  letter-spacing: 1px;
+  /* border: 2px solid var(--color-primary-dark); */
+}
+
+.cal-day-greyed {
+  color: var(--color-greyed);
+}
+
+.cal-day-number:hover {
+  box-shadow: inset 0 0 0 2px var(--color-secondary);
+  color: var(--color-secondary);
+  background-color: var(--color-primary-dark);
+}
+
+.cal-container,
+.cal-day-name,
+.cal-day-number {
+  border-radius: 10px;
+}
+
+.cal-day-greyed:hover {
+  box-shadow: inset 0 0 0 2px var(--color-greyed);
+  color: var(--color-greyed);
+  background-color: var(--color-primari-light);
+}
+
+.small-gap {
+  gap: 0.5em;
+}
+
+.today {
+  background-color: var(--color-secondary);
+  color: var(--color-primary-dark);
+}
+
+@media (max-width: 600px) {
+  html {
+    font-size: 12px;
+  }
+
+  .cal-container {
+    padding: 1em;
+  }
+
+  .cal-day-number,
+  .cal-day-name {
+    padding: 0.5em;
+  }
+
+  .small-gap {
+    gap: 0.2em;
+  }
+}
+
+@media (max-width: 400px) {
+  html {
+    font-size: 10px;
+  }
+}
